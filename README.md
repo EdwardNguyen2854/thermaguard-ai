@@ -116,6 +116,26 @@ rf_model = train_random_forest(X_train, y_train)
 prediction = rf_model.predict(X_test)
 ```
 
+## Web Interface
+
+A FastAPI-powered web dashboard is available at `http://localhost:8000/`.
+
+### Pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Dashboard with system overview and quick actions |
+| `/data` | Data upload and management |
+| `/training` | Model training configuration |
+| `/predictions` | Single and batch predictions |
+| `/analytics` | Data visualization and insights |
+
+### Tech Stack
+
+- **Frontend**: Vanilla JavaScript, HTML5, CSS3
+- **Charts**: Plotly.js
+- **Backend**: FastAPI with Jinja2 templates
+
 ## License
 
 MIT License — see [LICENSE](LICENSE) for details.

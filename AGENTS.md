@@ -59,6 +59,20 @@ python -m unittest tests.test_module.TestClass.test_method -v
 python -m uvicorn src.deployment.api:app --reload
 ```
 
+### Web Interface
+
+The web dashboard is available at `http://localhost:8000/`:
+
+| Route | Description |
+|-------|-------------|
+| `/` | Dashboard with system overview and quick actions |
+| `/data` | Data upload and management |
+| `/training` | Model training configuration |
+| `/predictions` | Single and batch predictions |
+| `/analytics` | Data visualization and insights |
+
+Frontend files are in `templates/` (HTML) and `static/` (CSS/JS).
+
 ### Linting (Recommended Tools)
 
 Install linting tools:

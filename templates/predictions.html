@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predictions - ThermaGuard AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <div class="logo-icon">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            </div>
+                <span class="logo-text">ThermaGuard AI</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="nav-section">Main</div>
+            <a href="/" class="nav-item" data-page="dashboard">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="/data" class="nav-item" data-page="data">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path></svg>
+                <span>Data</span>
+            </a>
+            <a href="/training" class="nav-item" data-page="training">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                <span>Training</span>
+            </a>
+            <a href="/predictions" class="nav-item active" data-page="predictions">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <span>Predictions</span>
+            </a>
+            <a href="/analytics" class="nav-item" data-page="analytics">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                <span>Analytics</span>
+            </a>
+        </nav>
+        <div class="footer">
+            <p>ThermaGuard AI v1.0</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <h1 class="page-title">Predictions</h1>
+                <p class="page-subtitle">Make failure predictions with trained models</p>
+            </div>
+        </header>
+
+        <div class="content-area">
+            <div class="grid grid-2">
+                <div class="page-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Input Features</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label class="form-label">Supply Temperature (°C)</label>
+                            <input type="number" class="form-input" id="T_Supply" value="20" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Return Temperature (°C)</label>
+                            <input type="number" class="form-input" id="T_Return" value="21" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Setpoint Return (°C)</label>
+                            <input type="number" class="form-input" id="SP_Return" value="20" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Saturation Temperature (°C)</label>
+                            <input type="number" class="form-input" id="T_Saturation" value="19" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Outdoor Temperature (°C)</label>
+                            <input type="number" class="form-input" id="T_Outdoor" value="15" step="0.1">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Supply Humidity (%)</label>
+                            <input type="number" class="form-input" id="RH_Supply" value="70" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Return Humidity (%)</label>
+                            <input type="number" class="form-input" id="RH_Return" value="55" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Outdoor Humidity (%)</label>
+                            <input type="number" class="form-input" id="RH_Outdoor" value="80" min="0" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Energy (kWh)</label>
+                            <input type="number" class="form-input" id="Energy" value="100" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Power (kW)</label>
+                            <input type="number" class="form-input" id="Power" value="2.5" min="0" step="0.1">
+                        </div>
+                        
+                        <button class="btn btn-primary btn-lg" onclick="makePrediction()" style="width: 100%;">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            Predict
+                        </button>
+                    </div>
+                </div>
+
+                <div class="page-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Prediction Result</h3>
+                    </div>
+                    <div class="card-body" id="prediction-result">
+                        <div class="empty-state">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                            <h3>No Prediction Yet</h3>
+                            <p>Enter features and click Predict</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page-card">
+                <div class="card-header">
+                    <h3 class="card-title">Batch Predictions</h3>
+                    <button class="btn btn-secondary btn-sm" onclick="runBatchPrediction()">Run on Recent Data</button>
+                </div>
+                <div class="card-body" id="batch-results">
+                    <div class="empty-state">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        <h3>No Batch Results</h3>
+                        <p>Run batch prediction to see results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="loading-overlay" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Making prediction...</p>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            checkModelAvailable();
+        });
+    </script>
+</body>
+</html>
